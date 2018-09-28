@@ -48,7 +48,7 @@ module.exports = {
   ...
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []), //这个如果有，注释掉
+      ...(config.dev.useEslint ? [createLintingRule()] : []),
       ...
       {
         test: /\.(css|scss)$/,
