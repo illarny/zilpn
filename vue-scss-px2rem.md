@@ -48,7 +48,7 @@ module.exports = {
   ...
   module: {
     rules: [
-      // ...(config.dev.useEslint ? [createLintingRule()] : []), //这个如果有，注释掉
+      ...(config.dev.useEslint ? [createLintingRule()] : []), //这个如果有，注释掉
       ...
       {
         test: /\.(css|scss)$/,
@@ -70,6 +70,7 @@ import 'lib-flexible'
 
 Vue.config.productionTip = false
 
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
