@@ -1,7 +1,7 @@
 # bitshares password
 
 ## 验证密码过程
-* 从钱包中获取私钥
+* 从钱包导入格式wif(Wallet Import Format)中验证获取私钥
 ```js
 fromWif = PrivateKey.fromWif(password)
 ```
@@ -11,7 +11,7 @@ fromWif = PrivateKey.fromWif(password)
 acc = ChainStore.getAccount(account, false)
 ```
 
-* 如果钱包中获取到了私钥，根据私钥生成本地公私钥对
+* 如果钱包导入格式wif中获取到了私钥，根据私钥生成本地公私钥对
 ```js
 key = {
   privKey: fromWif,
@@ -19,7 +19,7 @@ key = {
 }
 ```
 
-* 如果钱包中没有获取到私钥，根据密码生成本地公私钥对
+* 如果钱包中没有获取到私钥，生成本地公私钥对
 ```js
 key = this.generateKeyFromPassword(account, role, password)
 ```
@@ -58,3 +58,7 @@ if (!foundRole) {
 }
 ```
 
+
+```
+// 
+var private_wif = new Buffer(decode(_private_wif));
